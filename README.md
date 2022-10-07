@@ -1,2 +1,2 @@
-# brscrt-error-handler
+# error-handler
 Error Handler
