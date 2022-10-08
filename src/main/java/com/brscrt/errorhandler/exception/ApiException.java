@@ -5,17 +5,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import javax.validation.constraints.NotNull;
+
 public abstract class ApiException extends Exception {
-    protected HttpStatus httpStatus;
+    private final HttpStatus httpStatus;
     private final Error error;
 
-    protected ApiException(HttpStatus httpStatus, Error error) {
+    protected ApiException(@NotNull HttpStatus httpStatus, @NotNull Error error) {
         error.setCode(String.valueOf(HttpStatus.CONFLICT.value()));
         error.setStatus(HttpStatus.CONFLICT.getReasonPhrase());
         this.error = error;
         this.httpStatus = httpStatus;
     }
 
+    @NotNull
     public ResponseEntity<Error> getResponse() {
         return ResponseEntity
                 .status(httpStatus)

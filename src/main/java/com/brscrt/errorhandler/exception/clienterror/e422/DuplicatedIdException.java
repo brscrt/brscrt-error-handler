@@ -5,13 +5,13 @@ import org.springframework.lang.Nullable;
 
 import javax.validation.constraints.NotNull;
 
-public final class MissingFieldException extends UnprocessableEntityException {
+public final class DuplicatedIdException extends UnprocessableEntityException {
 
-    private static final String REASON = "Missing Fields: %s";
+    private static final String REASON = "Duplicated id: %s";
 
-    public MissingFieldException(@Nullable String referenceError, @NotNull String... attributes) {
+    public DuplicatedIdException(@Nullable String referenceError, @NotNull String id) {
         super(Error.builder()
-                .reason(getReason(REASON, attributes))
+                .reason(String.format(REASON, id))
                 .referenceError(referenceError)
                 .build());
     }
