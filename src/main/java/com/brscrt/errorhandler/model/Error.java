@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
@@ -12,6 +13,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("java:S1068")
 @ApiModel(description = "Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)")
+@Validated
 @Getter
 @Setter
 @Builder
