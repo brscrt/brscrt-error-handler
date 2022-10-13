@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public final class NotAcceptableHeaderException extends NotAcceptableException {
 
-    private static final String REASON = "Missing or unsupported value for %s header";
+    private static final String REASON = "Missing or unsupported value for %s header.";
 
     public NotAcceptableHeaderException(@NotNull String header) {
         super(Error.builder()

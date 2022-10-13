@@ -12,8 +12,8 @@ public abstract class ApiException extends Exception {
     private final Error error;
 
     protected ApiException(@NotNull HttpStatus httpStatus, @NotNull Error error) {
-        error.setCode(String.valueOf(HttpStatus.CONFLICT.value()));
-        error.setStatus(HttpStatus.CONFLICT.getReasonPhrase());
+        error.setCode(String.valueOf(httpStatus.value()));
+        error.setStatus(httpStatus.getReasonPhrase());
         this.error = error;
         this.httpStatus = httpStatus;
     }

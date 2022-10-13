@@ -9,16 +9,17 @@ import javax.validation.constraints.NotNull;
 
 public class NotImplementedException extends ApiException {
 
-    private static final String REASON = "Not Implemented";
+    protected static final String REASON = "Not Implemented.";
+    protected static final HttpStatus HTTP_STATUS = HttpStatus.NOT_IMPLEMENTED;
 
     public NotImplementedException(@Nullable String referenceError) {
-        super(HttpStatus.NOT_IMPLEMENTED, Error.builder()
+        super(HTTP_STATUS, Error.builder()
                 .reason(REASON)
                 .referenceError(referenceError)
                 .build());
     }
 
     protected NotImplementedException(@NotNull Error error) {
-        super(HttpStatus.NOT_IMPLEMENTED, error);
+        super(HTTP_STATUS, error);
     }
 }

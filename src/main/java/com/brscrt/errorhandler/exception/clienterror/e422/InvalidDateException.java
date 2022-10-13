@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public final class InvalidDateException extends UnprocessableEntityException {
 
-    private static final String REASON = "Invalid date value: %s for %s";
+    private static final String REASON = "Invalid date value: %s for %s.";
 
     public InvalidDateException(@Nullable String referenceError,
                                 @NotNull String field,

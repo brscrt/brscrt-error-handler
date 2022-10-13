@@ -5,7 +5,7 @@ import com.brscrt.errorhandler.model.Error;
 
 public final class MissingAcceptHeaderException extends NotAcceptableException {
 
-    private static final String REASON = "Missing Accept header";
+    private static final String REASON = "Missing Accept header.";
 
     public MissingAcceptHeaderException() {
         super(Error.builder()

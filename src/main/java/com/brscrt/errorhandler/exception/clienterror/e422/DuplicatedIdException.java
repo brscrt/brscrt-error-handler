@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public final class DuplicatedIdException extends UnprocessableEntityException {
 
-    private static final String REASON = "Duplicated id: %s";
+    private static final String REASON = "Duplicated id: %s.";
 
     public DuplicatedIdException(@Nullable String referenceError, @NotNull String id) {
         super(Error.builder()

@@ -7,8 +7,11 @@ import org.springframework.http.HttpStatus;
 import javax.validation.constraints.NotNull;
 
 public abstract class UnprocessableEntityException extends ApiException {
+
+    protected static final HttpStatus HTTP_STATUS = HttpStatus.UNPROCESSABLE_ENTITY;
+
     protected UnprocessableEntityException(@NotNull Error error) {
-        super(HttpStatus.UNPROCESSABLE_ENTITY, error);
+        super(HTTP_STATUS, error);
     }
 
     protected static String getReason(@NotNull String reason, @NotNull String... attributes) {

@@ -8,8 +8,10 @@ import javax.validation.constraints.NotNull;
 
 public abstract class NotAcceptableException extends ApiException {
 
+    protected static final HttpStatus HTTP_STATUS = HttpStatus.NOT_ACCEPTABLE;
+
     protected NotAcceptableException(@NotNull Error error) {
-        super(HttpStatus.NOT_ACCEPTABLE, error);
+        super(HTTP_STATUS, error);
     }
 
 }

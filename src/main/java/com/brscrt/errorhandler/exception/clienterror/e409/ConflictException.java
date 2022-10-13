@@ -9,16 +9,17 @@ import javax.validation.constraints.NotNull;
 
 public class ConflictException extends ApiException {
 
-    private static final String REASON = "There are conflicts.";
+    protected static final String REASON = "There are conflicts.";
+    protected static final HttpStatus HTTP_STATUS = HttpStatus.CONFLICT;
 
     public ConflictException(@Nullable String referenceError) {
-        super(HttpStatus.CONFLICT, Error.builder()
+        super(HTTP_STATUS, Error.builder()
                 .reason(REASON)
                 .referenceError(referenceError)
                 .build());
     }
 
     protected ConflictException(@NotNull Error error) {
-        super(HttpStatus.CONFLICT, error);
+        super(HTTP_STATUS, error);
     }
 }

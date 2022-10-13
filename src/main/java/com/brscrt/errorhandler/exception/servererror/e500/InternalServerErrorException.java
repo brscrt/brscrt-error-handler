@@ -8,16 +8,18 @@ import org.springframework.lang.Nullable;
 import javax.validation.constraints.NotNull;
 
 public class InternalServerErrorException extends ApiException {
-    private static final String REASON = "Internal Server Error";
+
+    protected static final String REASON = "Internal Server Error.";
+    protected static final HttpStatus HTTP_STATUS = HttpStatus.INTERNAL_SERVER_ERROR;
 
     public InternalServerErrorException(@Nullable String referenceError) {
-        super(HttpStatus.INTERNAL_SERVER_ERROR, Error.builder()
+        super(HTTP_STATUS, Error.builder()
                 .reason(REASON)
                 .referenceError(referenceError)
                 .build());
     }
 
     protected InternalServerErrorException(@NotNull Error error) {
-        super(HttpStatus.INTERNAL_SERVER_ERROR, error);
+        super(HTTP_STATUS, error);
     }
 }

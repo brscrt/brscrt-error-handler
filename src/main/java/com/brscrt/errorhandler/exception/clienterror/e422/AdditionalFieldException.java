@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public final class AdditionalFieldException extends UnprocessableEntityException {
 
-    private static final String REASON = "Additional Fields: %s";
+    private static final String REASON = "Additional Fields: %s.";
 
     public AdditionalFieldException(@Nullable String referenceError, @NotNull String... attributes) {
         super(Error.builder()

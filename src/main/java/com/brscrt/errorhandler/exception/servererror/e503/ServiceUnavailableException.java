@@ -8,8 +8,10 @@ import javax.validation.constraints.NotNull;
 
 public abstract class ServiceUnavailableException extends ApiException {
 
+    protected static final HttpStatus HTTP_STATUS = HttpStatus.SERVICE_UNAVAILABLE;
+
     protected ServiceUnavailableException(@NotNull Error error) {
-        super(HttpStatus.SERVICE_UNAVAILABLE, error);
+        super(HTTP_STATUS, error);
     }
 
 }

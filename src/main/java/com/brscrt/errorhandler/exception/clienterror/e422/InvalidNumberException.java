@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public final class InvalidNumberException extends UnprocessableEntityException {
 
-    private static final String REASON = "Invalid number value: %s for %s";
+    private static final String REASON = "Invalid number value: %s for %s.";
 
     public InvalidNumberException(@Nullable String referenceError,
                                   @NotNull String field,

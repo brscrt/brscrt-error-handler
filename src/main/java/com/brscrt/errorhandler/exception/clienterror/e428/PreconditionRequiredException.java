@@ -8,8 +8,10 @@ import javax.validation.constraints.NotNull;
 
 public abstract class PreconditionRequiredException extends ApiException {
 
+    protected static final HttpStatus HTTP_STATUS = HttpStatus.PRECONDITION_REQUIRED;
+
     protected PreconditionRequiredException(@NotNull Error error) {
-        super(HttpStatus.PRECONDITION_REQUIRED, error);
+        super(HTTP_STATUS, error);
     }
 
 }

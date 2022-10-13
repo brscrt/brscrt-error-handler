@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public final class InvalidIdException extends UnprocessableEntityException {
 
-    private static final String REASON = "Invalid id: %s";
+    private static final String REASON = "Invalid id: %s.";
 
     public InvalidIdException(@Nullable String referenceError, @NotNull String id) {
         super(Error.builder()

@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public final class InvalidFieldException extends UnprocessableEntityException {
 
-    private static final String REASON = "Invalid field value: %s for %s";
+    private static final String REASON = "Invalid field value: %s for %s.";
 
     public InvalidFieldException(@Nullable String referenceError,
                                  @NotNull String field,

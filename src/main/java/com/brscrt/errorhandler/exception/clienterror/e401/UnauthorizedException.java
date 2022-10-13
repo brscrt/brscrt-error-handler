@@ -8,16 +8,18 @@ import org.springframework.lang.Nullable;
 import javax.validation.constraints.NotNull;
 
 public class UnauthorizedException extends ApiException {
-    private static final String REASON = "Access is unauthorized!";
+
+    protected static final String REASON = "Access is unauthorized!";
+    protected static final HttpStatus HTTP_STATUS = HttpStatus.UNAUTHORIZED;
 
     public UnauthorizedException(@Nullable String referenceError) {
-        super(HttpStatus.UNAUTHORIZED, Error.builder()
+        super(HTTP_STATUS, Error.builder()
                 .reason(REASON)
                 .referenceError(referenceError)
                 .build());
     }
 
     protected UnauthorizedException(@NotNull Error error) {
-        super(HttpStatus.UNAUTHORIZED, error);
+        super(HTTP_STATUS, error);
     }
 }

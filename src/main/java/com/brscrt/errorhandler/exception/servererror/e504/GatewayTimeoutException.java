@@ -8,8 +8,10 @@ import javax.validation.constraints.NotNull;
 
 public abstract class GatewayTimeoutException extends ApiException {
 
+    protected static final HttpStatus HTTP_STATUS = HttpStatus.GATEWAY_TIMEOUT;
+
     protected GatewayTimeoutException(@NotNull Error error) {
-        super(HttpStatus.GATEWAY_TIMEOUT, error);
+        super(HTTP_STATUS, error);
     }
 
 }

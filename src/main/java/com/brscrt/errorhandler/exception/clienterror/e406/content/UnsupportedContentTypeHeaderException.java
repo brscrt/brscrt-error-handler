@@ -5,7 +5,7 @@ import com.brscrt.errorhandler.model.Error;
 
 public final class UnsupportedContentTypeHeaderException extends NotAcceptableException {
 
-    private static final String REASON = "Unsupported Content-Type header";
+    private static final String REASON = "Unsupported Content-Type header.";
 
     public UnsupportedContentTypeHeaderException() {
         super(Error.builder()

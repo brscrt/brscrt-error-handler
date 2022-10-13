@@ -31,9 +31,7 @@ class ErrorHandlingAdviceTest extends TestBase {
     }
 
     private ResponseEntity<Error> generateErrorResponse() {
-        Error error = Error.builder().code("code").reason("reason").message("message").status("status")
-                .referenceError("referenceError").baseType("baseType").schemaLocation("schemaLocation").type("type")
-                .build();
+        Error error = TestUtil.generateDefaultError();
         return ResponseEntity.of(Optional.of(error));
     }
 

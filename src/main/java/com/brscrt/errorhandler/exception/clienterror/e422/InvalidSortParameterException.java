@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public final class InvalidSortParameterException extends UnprocessableEntityException {
 
-    private static final String REASON = "Invalid sort parameter: %s";
+    private static final String REASON = "Invalid sort parameter: %s.";
 
     public InvalidSortParameterException(@Nullable String referenceError, @NotNull String parameter) {
         super(Error.builder()

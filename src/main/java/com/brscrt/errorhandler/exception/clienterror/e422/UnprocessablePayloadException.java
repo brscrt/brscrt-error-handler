@@ -5,7 +5,7 @@ import org.springframework.lang.Nullable;
 
 public final class UnprocessablePayloadException extends UnprocessableEntityException {
 
-    private static final String REASON = "Unprocessable payload";
+    private static final String REASON = "Unprocessable payload.";
 
     public UnprocessablePayloadException(@Nullable String referenceError) {
         super(Error.builder()

@@ -5,11 +5,12 @@ import org.springframework.lang.Nullable;
 
 public final class MissingIfMatchHeaderException extends PreconditionRequiredException {
 
-    private static final String REASON = "Missing if-match header";
+    private static final String REASON = "Missing if-match header.";
 
     public MissingIfMatchHeaderException(@Nullable String referenceError) {
         super(Error.builder()
                 .reason(REASON)
+                .referenceError(referenceError)
                 .build());
     }
 }

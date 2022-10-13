@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public final class InvalidEnumException extends UnprocessableEntityException {
 
-    private static final String REASON = "Invalid enumeration value: %s for %s";
+    private static final String REASON = "Invalid enumeration value: %s for %s.";
 
     public InvalidEnumException(@Nullable String referenceError,
                                 @NotNull String field,

@@ -5,7 +5,7 @@ import org.springframework.lang.Nullable;
 
 public final class InvalidPathParameterException extends UnprocessableEntityException {
 
-    private static final String REASON = "Invalid path parameter";
+    private static final String REASON = "Invalid path parameter.";
 
     public InvalidPathParameterException(@Nullable String referenceError) {
         super(Error.builder()
