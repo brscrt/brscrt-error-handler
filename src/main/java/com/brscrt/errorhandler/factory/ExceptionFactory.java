@@ -13,6 +13,7 @@ import com.brscrt.errorhandler.exception.clienterror.e406.other.NotAcceptableHea
 import com.brscrt.errorhandler.exception.clienterror.e409.ConflictException;
 import com.brscrt.errorhandler.exception.clienterror.e412.InvalidIfMatchHeaderException;
 import com.brscrt.errorhandler.exception.clienterror.e422.*;
+import com.brscrt.errorhandler.exception.clienterror.e428.MissingIfMatchHeaderException;
 import com.brscrt.errorhandler.exception.servererror.e500.InternalServerErrorException;
 import com.brscrt.errorhandler.exception.servererror.e501.NotImplementedException;
 import com.brscrt.errorhandler.exception.servererror.e503.KafkaUnavailableException;
@@ -177,8 +178,8 @@ public final class ExceptionFactory {
 
         @NoArgsConstructor(access = AccessLevel.PRIVATE)
         public static class PreconditionRequired {
-            public static ApiException throwInvalidIfMatchHeaderException(@NotNull String ifMatch) {
-                return new InvalidIfMatchHeaderException(ifMatch);
+            public static ApiException throwMissingIfMatchHeaderException(@Nullable String referenceError) {
+                return new MissingIfMatchHeaderException(referenceError);
             }
         }
     }
