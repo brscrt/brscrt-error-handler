@@ -8,12 +8,11 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.5</version>
-        <relativePath/>
     </parent>
 
     <groupId>com.brscrt</groupId>
     <artifactId>error-handler</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <name>error-handler</name>
     <description>Error Handler</description>
 
@@ -21,6 +20,7 @@
         <java.version>8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <jacoco.version>0.8.8</jacoco.version>
         <swagger.version>1.6.8</swagger.version>
     </properties>
 
@@ -80,7 +80,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version>
+                <version>${jacoco.version}</version>
                 <executions>
                     <execution>
                         <goals>
