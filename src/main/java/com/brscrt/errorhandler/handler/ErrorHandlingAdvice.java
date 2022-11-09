@@ -6,6 +6,7 @@ import com.brscrt.errorhandler.factory.ExceptionFactory;
 import com.brscrt.errorhandler.model.Error;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.mapping.PropertyReferenceException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Slf4j
 @RequiredArgsConstructor
+@ConditionalOnProperty(value = "app.error-handling.enabled", havingValue = "true")
 @ControllerAdvice
 public class ErrorHandlingAdvice implements ApiExceptionHandler {
     private static final String ERROR = "The api got an error.";
